@@ -1,0 +1,168 @@
+<header>
+    <nav class="navbar navbar-expand-lg bg-light" id="navbar">
+    <div class="container">
+      <img src="../assets/logo.png" alt="" name="logo" width="35px">
+      <a class="navbar-brand" href="#">WebCar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span><i class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/accueil" routerLinkActive="active">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/accueil#about">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/accueil#about">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/accueil#contact">Contact</a>
+          </li>
+         
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+        </form>
+  
+        <div class="text-end">
+          <a type="button" routerLink="/login" class="btn btn-outline-primary me-2">Se connecter</a>
+          <a type="button" routerLink="/signup" class="btn btn-danger active">S'inscrire</a>
+        </div>
+      </div>
+    </div>
+    </nav>
+</header>
+<main class="form-signin rounded p-4 d-flex justify-content-center align-items-center">
+    <div class="background-blur"></div>
+    <div class="mx-auto bg-light p-5 rounded needs-validation">
+        <h4 class="mb-4">Créer un compte</h4>
+        <form class="needs-validation">
+            <div class="alert alert-danger" role="alert" *ngIf="msgerreur!=''">
+                {{msgerreur}}
+            </div>
+            <div class="alert alert-success" role="alert" *ngIf="msgsuccess!=''">
+                {{msgsuccess}}
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="ncin" class="form-label fw-bold">Numéro carte d'identité</label>
+                    <input type="text" class="form-control" id="ncin" name="ncin" [(ngModel)] = "ncin" placeholder="Numéro carte d'identité" value="" required pattern="[0-9]{8}">
+                    <div class="invalid-feedback">
+                        Veuillez entrer un numéro de carte d'identité valide.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="nom" class="form-label fw-bold">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="nom" [(ngModel)] = "nom" placeholder="Nom" value="" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un nom valide.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="prenom" class="form-label fw-bold">Prénom</label>
+                    <input type="text" class="form-control" name="prenom" id="prenom" [(ngModel)] = "prenom" placeholder="Prénom" value="" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un prénom valide.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-12">
+                  <label for="numero_telephone" class="form-label fw-bold">Numéro de téléphone</label>
+                  <input type="tel" class="form-control" name="numero_telephone" id="numero_telephone" [(ngModel)] = "numero_telephone" required pattern="[0-9]{8}">
+                  <div class="invalid-feedback">
+                      Veuillez entrer un numéro de téléphone valide.
+                  </div>
+              </div>
+          </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="date_de_naissance" class="form-label fw-bold">Date de naissance</label>
+                    <input type="date" class="form-control" name="date_de_naissance" id="date_de_naissance" [(ngModel)] = "date_de_naissance" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer une date de naissance valide.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="adresse" class="form-label fw-bold">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="adresse" [(ngModel)] = "adresse" placeholder="12 Rue de Palestine" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer une adresse valide.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-7">
+                    <label for="gouvernorat" class="form-label fw-bold">Gouvernorat</label>
+                    <select class="form-select" name="gouvernorat" id="gouvernorat" [(ngModel)] = "gouvernorat" required>
+                        <option value="">Choisir...</option>
+                        <option value="Ben arous">Ben arous</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Veuillez sélectionner un gouvernorat valide.
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <label for="code_postal" class="form-label fw-bold">Code Postal</label>
+                    <input type="text" class="form-control" name="code_postal" id="code_postal" [(ngModel)] = "code_postal" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Code postal requis.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label class="form-label fw-bold">Genre</label>
+                    <div class="d-flex">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="genre" id="genreHomme" [(ngModel)] = "genre" value="M">
+                            <label class="form-check-label fw-normal" for="genreHomme">Homme</label>
+                        </div>
+                        <div class="form-check form-check-inline ms-3">
+                            <input class="form-check-input" type="radio" name="genre" id="genreFemme" [(ngModel)] = "genre" value="F">
+                            <label class="form-check-label fw-normal" for="genreFemme">Femme</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="username" class="form-label fw-bold">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" name="username" id="username" [(ngModel)] = "username" placeholder="Nom d'utilisateur" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un nom d'utilisateur valide.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="email" class="form-label fw-bold">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" [(ngModel)] = "email" placeholder="you@example.com" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer une adresse email valide.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="password" class="form-label fw-bold">Mot de passe</label>
+                    <input type="password" class="form-control" name="password" id="password" [(ngModel)] = "password" placeholder="Mot de passe" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un mot de passe valide.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button (click)="inscription()" class="btn btn-primary w-100 py-2" type="submit">Créer un compte</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+

@@ -1,0 +1,206 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-light" id="navbar">
+  <div class="container">
+    <img src="../assets/logo.png" alt="" name="logo" width="35px">
+    <a class="navbar-brand" href="#">WebCar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span><i class="fa-solid fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="" routerLinkActive="active">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/accueil#about">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/accueil#about">À propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/accueil#contact">Contact</a>
+        </li>
+       
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+      </form>
+
+      <div class="text-end">
+        <a type="button" routerLink="/login" class="btn btn-outline-primary me-2">Se connecter</a>
+        <a type="button" routerLink="/signup" class="btn btn-danger">S'inscrire</a>
+      </div>
+    </div>
+  </div>
+  </nav>
+</header>
+<main>
+  <section>
+    <div class="row">
+      <div class="background-blur"></div>
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img [src]="cheminImage" class="d-block mx-lg-auto img-fluid" alt="" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">WebCar</h1>
+            <p class="lead">Votre partenaire de confiance pour des déplacements sûrs et sans tracas. De la gestion des formalités administratives à la réservation de vos examens, nous facilitons votre parcours vers la route en toute sécurité.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a type="button"routerLink="/signup" class="btn btn-success btn-lg px-12"><span class="text-light">Créer nouveau compte</span></a>
+        </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <div class="b-example-divider"></div>
+  <section id="services">
+    <div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Services</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <i class="bi bi-car-front-fill"></i>
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Assistance Administrative Véhiculaire</h3>
+        <p>Simplifiez vos démarches administratives liées à votre véhicule avec notre service d'assistance rapide et efficace.</p>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <i class="bi bi-calendar3"></i>
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Planification des Examens de Conduite</h3>
+        <p>Gérez facilement vos rendez-vous d'examen de conduite grâce à notre système de réservation en ligne intuitif.</p>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <i class="bi bi-stoplights"></i>
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Aménagement et Maintenance des Infrastructures Routières</h3>
+        <p>Profitez de routes sûres et bien entretenues grâce à notre service dédié à l'aménagement et à la maintenance des infrastructures routières.</p>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <div class="b-example-divider"></div>
+  <section id="about">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+      <div class="col-lg-12 px-0">
+        <h1 class="display-4 fst-italic text-center">À propos de nous</h1>
+        <p class="lead my-3 text-center">WebCar est une agence spécialisée dans les services liés à la conduite automobile et à la maintenance des véhicules. Fondée en 2024, elle s'est rapidement imposée comme une référence dans le secteur. Conformément à la législation en vigueur, WebCar propose une gamme complète de services destinés à faciliter la vie des conducteurs et des propriétaires de véhicules.
+        </p>
+        <p class="lead mb-0"><a class="text-body-emphasis fw-bold">WebCar s'engage à fournir les services suivants :</a></p>
+        <div>
+          <ul>
+            <li>Organisation d'épreuves théoriques et pratiques pour l'obtention du permis de conduire, ainsi que des sessions de formation pour aider les candidats à réussir leurs examens.</li>
+            <li>Réalisation de visites techniques pour garantir la conformité des véhicules aux normes de sécurité et environnementales en vigueur.</li>
+            <li>Mise en place de rendez-vous pour les diverses démarches administratives liées aux véhicules, telles que l'immatriculation, le renouvellement de permis...</li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <div class="b-example-divider"></div>
+
+  <section id="contact">
+    <div class="container px-4 py-5">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="bg-body-tertiary p-5 rounded mt-3">
+            <h1>Contactez-nous</h1>
+            <p class="lead">Pour toute question, commentaire ou demande, n'hésitez pas à nous contacter en utilisant le formulaire ci-dessous. Nous sommes là pour vous aider !</p>
+            <div class="d-flex flex-column align-items-start">
+              <span class="fw-bolder">Adresse:</span>
+              <div class="badge text-bg-primary text-wrap">13 Avenue de Carthage, 1054, Tunis</div>
+              <span class="fw-bolder mt-3">Numéro de téléphone:</span>
+              <div class="badge text-bg-primary text-wrap">71 000 000</div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-lg-6">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Votre Nom</label>
+              <input type="text" class="form-control" id="name" placeholder="Donner votre nom">
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Objet</label>
+              <input type="text" class="form-control" id="subject" placeholder="Donner le sujet">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="3" placeholder="Ecrire votre message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+</main>
+<div class="b-example-divider"></div>
+
+
+  <footer class="py-5 container">
+    <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Abonnez-vous à notre newsletter</h5>
+          <p>Résumé mensuel de nos nouveautés et de nos passions.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Adresse Email</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Adresse Email">
+            <button class="btn btn-warning" type="button">S'abonner</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>&copy; 2024 WebCar. Tous droits réservés.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+      </ul>
+    </div>
+  </footer>
