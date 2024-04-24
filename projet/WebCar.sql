@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 17 avr. 2024 à 19:10
+-- Généré le : mer. 24 avr. 2024 à 18:20
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `attt`
+-- Base de données : `test`
 --
 
 -- --------------------------------------------------------
@@ -58,17 +58,35 @@ CREATE TABLE `client` (
   `adresse` text NOT NULL,
   `num_tel` varchar(8) NOT NULL,
   `username` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `mot_de_passe` varchar(200) NOT NULL
+  `email` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `client`
 --
 
-INSERT INTO `client` (`id_client`, `ncin`, `nom`, `prenom`, `date_de_naissance`, `genre`, `adresse`, `num_tel`, `username`, `email`, `mot_de_passe`) VALUES
-(1, '73819273', 'Ali', 'Ali', '2000-10-10', 'M', 'Tunis', '20202020', 'ali100', 'ali@gmail.com', '0000'),
-(5, '12345678', 'Ali', 'Ali', '2000-10-10', 'M', 'Tunis', '20202020', 'ali120', 'ali@gmail.com', '0000');
+INSERT INTO `client` (`id_client`, `ncin`, `nom`, `prenom`, `date_de_naissance`, `genre`, `adresse`, `num_tel`, `username`, `email`) VALUES
+(21, '12345678', 'ali', 'ali', '1990-01-01', 'M', '10 rue de marseille, 2001, Ben arous', '21000000', 'ali100', 'ali@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `compte`
+--
+
+CREATE TABLE `compte` (
+  `ncin` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `mot_de_passe` text NOT NULL,
+  `role` enum('A','C') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Déchargement des données de la table `compte`
+--
+
+INSERT INTO `compte` (`ncin`, `username`, `mot_de_passe`, `role`) VALUES
+(12345678, 'ali100', '0000', 'C');
 
 -- --------------------------------------------------------
 
@@ -192,6 +210,12 @@ ALTER TABLE `client`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Index pour la table `compte`
+--
+ALTER TABLE `compte`
+  ADD PRIMARY KEY (`ncin`);
+
+--
 -- Index pour la table `disponibilite`
 --
 ALTER TABLE `disponibilite`
@@ -244,7 +268,7 @@ ALTER TABLE `vehicule`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `employe`
