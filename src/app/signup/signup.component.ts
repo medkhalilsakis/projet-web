@@ -1,4 +1,4 @@
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -13,47 +13,45 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent implements OnInit{
-  ncin:string|undefined;
-  nom:string|undefined;
-  prenom:string|undefined;
-  date_de_naissance:Date|undefined;
-  genre:string|undefined;
-  adresse:string|undefined;
-  gouvernorat:string|undefined;
-  code_postal:string|undefined;
-  numero_telephone:string|undefined;
-  username:string|undefined;
-  email:string|undefined;
-  password:string|undefined;
-  msgerreur:string="";
-  msgsuccess:string="";
+  ncin?: string;
+  nom?: string;
+  prenom?: string;
+  date_de_naissance?: Date;
+  genre?: string;
+  adresse?: string;
+  gouvernorat?: string;
+  code_postal?: string;
+  numero_telephone?: string;
+  username?: string;
+  email?: string;
+  password?: string;
+  msgerreur: string="";
+  msgsuccess: string="";
   
 
   ngOnInit(){}
 
-  constructor(public http:HttpClient){}
+  constructor(public http: HttpClient, private router: Router) {}
+
 
   inscription(){
     if (
-      this.ncin?.trim() === '' ||
-      this.nom?.trim() === '' ||
-      this.prenom?.trim() === '' ||
+      this.ncin?.trim() == '' ||
+      this.nom?.trim() == '' ||
+      this.prenom?.trim() == '' ||
       !this.date_de_naissance ||
-      this.genre?.trim() === '' ||
-      this.adresse?.trim() === '' ||
-      this.gouvernorat?.trim() === '' ||
-      this.code_postal?.trim() === '' ||
-      this.numero_telephone?.trim() === '' ||
-      this.username?.trim() === '' ||
-      this.email?.trim() === '' ||
-      this.password?.trim() === ''
+      this.genre?.trim() == '' ||
+      this.adresse?.trim() == '' ||
+      this.gouvernorat?.trim() == '' ||
+      this.code_postal?.trim() == '' ||
+      this.numero_telephone?.trim() == '' ||
+      this.username?.trim() == '' ||
+      this.email?.trim() == '' ||
+      this.password?.trim() == ''
     ) {
       this.msgerreur = "Saisir tous les champs obligatoires";
     }else{
-    if(this.ncin==undefined || this.nom==undefined || this.prenom ==undefined || this.date_de_naissance==undefined || this.genre==undefined || this.adresse==undefined || this.gouvernorat==undefined || this.code_postal==undefined || this.numero_telephone==undefined || this.email==undefined || this.password ==undefined || this.username == undefined){
-        this.msgerreur ="Saisir email and password";
-    }else{
-        this.http.post("http://localhost/dashboard/projet/signup.php",{
+      this.http.post("http://localhost/dashboard/projet/signup.php",{
           "ncin":this.ncin,
           "nom":this.nom,
           "prenom":this.prenom,
@@ -67,19 +65,19 @@ export class SignupComponent implements OnInit{
           "email": this.email,
           "password": this.password
         }, {observe:'response', responseType: 'json'}).subscribe({
-              next : (response)=>{
-                if(response.status ==201)
-                  this.msgsuccess ="Ajout client effectué avec succès";
-                else
-                  {
-                    const body:any= response.body;
-                    this.msgerreur="Echec : "+ body['msg'];
-                  }
-              },
+          next: (response) => {
+            if (response.status == 200) {
+              this.msgsuccess = "Ajout client effectué avec succès";
+              localStorage.setItem('signupSuccessMessage', "Ajout client effectué avec succès");
+              this.router.navigate(['/login']);
+            } else {
+              const body: any = response.body;
+              this.msgerreur = "Echec : " + body['msg'];
+            }
+          },
               error: (error)=> this.msgerreur = error
             }
         );
       }
     }
-    }
-}
+  }

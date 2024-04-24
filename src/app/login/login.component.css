@@ -13,5 +13,8 @@ main{
     margin-top: 50px;
 }
 form{
-    max-width: 300px;
+    max-width: 400px;
+}
+p{
+    font-size: 14px;
 }
